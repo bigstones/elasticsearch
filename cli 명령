@@ -1,0 +1,10 @@
+조회
+
+curl -XGET http://[호스트]/[directory]/_search -H 'Content-Type: application/json' -d'
+{
+  "query":{
+    "match": {
+      "FIELD": "TEXT"
+    }
+  }
+}'
