@@ -1,0 +1,26 @@
+elasticsearch를 사용하면서 backup을 해야할 경우 사용한다
+
+
+설치 방법
+npm install elasticdump
+-- 혹시 오류가 났을경우
+npm config set registry http://registry.npmjs.org/ --global
+npm install elasticdump -g
+
+
+다운로드드 경로는
+find / -name elasticdump 를 이용해서 찾으면 쉽다
+
+
+
+명령
+[node_modules경로]/.bin/elasticdump --input=http://[elasticsearchhost]:9200/[index] --output=[다운로드할 경로].json --type=data
+[node_modules경로]/.bin/elasticdump --input=http://[elasticsearchhost]:9200/[index] --output=http://[uploadhost]:9200/[index] --type=data --noRefresh
+[node_modules경로]/.bin/elasticdump --input=[data 경로] --output=http://[uploadhost]:9200/[index] --type=data
+
+
+저장 type 은 세가지가있다
+analyzer
+mapping
+data
+
