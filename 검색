@@ -1,0 +1,32 @@
+# 전체검색
+
+GET mydocs/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+# id 값으로 검색
+
+GET mydocs/_search
+{
+  "query": {
+    "terms": {
+      "_id": [
+        "id값"
+      ]
+    }
+  }
+}
+
+# 특정필드 값으로 검색
+
+GET mydocs/_search
+{
+  "query": {
+    "match": {
+      "field": "값"
+    }
+  }
+}
