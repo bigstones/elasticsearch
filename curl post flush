@@ -1,2 +1,9 @@
+flush라고 DB의 commit과 같은 기능이 있는데 해당하는 기능이다
 
 curl -XPOST http://localhost:9200/_flush
+
+
+flush 하는동안 데이터가 너무 적게 flush 된다고 생각되면 임계값 크기를 늘려 작업한다
+curl -XPUT 'es-endpoint/index-name/_settings?pretty' -d '{"index":{"translog.flush_threshold_size" : "1024MB"}}'
+
+1024MB로 설정은 32GB 이상의 메모리가 있는 인스턴스에 적합합니다
