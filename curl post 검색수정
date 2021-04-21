@@ -11,4 +11,4 @@ curl -XPOST http://localhost:9200/myindex/_update_by_query -H 'Content-Type: app
       "값":"ㅁㄴㅇㄹ"
     }
   }
-}
+}'
