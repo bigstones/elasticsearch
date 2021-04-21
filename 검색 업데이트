@@ -1,5 +1,5 @@
 #미완성
-#값이 ㅁㄴㅇㄹ 인 애들 ㅂㅈㄷㄱ 로 바꿔라
+#값이 ㅁㄴㅇㄹ 인 애의 location값을 ㅂㅈㄷㄱ 로 바꿔라
 
 POST myindex/_update_by_query
 {
