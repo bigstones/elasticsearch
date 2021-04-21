@@ -1,4 +1,4 @@
-curl -XPOST http://crm.luxclinic.kr:9200/myindex/_update_by_query -H 'Content-Type: application/json' -d'
+curl -XPOST http://localhost:9200/myindex/_update_by_query -H 'Content-Type: application/json' -d'
 {
   "script":{
     "source":"ctx._source.insert_data = params.asdf",
