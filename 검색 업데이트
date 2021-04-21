@@ -1,7 +1,7 @@
 #미완성
 #값이 ㅁㄴㅇㄹ 인 애들 ㅂㅈㄷㄱ 로 바꿔라
 
-POST images/_update_by_query
+POST myindex/_update_by_query
 {
   "script":{
     "source":"ctx._source.isAltered = params.location",
