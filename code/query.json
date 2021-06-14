@@ -1,0 +1,37 @@
+{
+      "script": {
+          "lang": "mustache",
+          "source": {
+              "from": "{{from}}",
+              "size": "{{size}}",
+              "sort": [{"timestamp" : "desc"},
+                  "_score"
+              ],
+              "query": {
+                  "bool": {
+                      "must": [
+                          {
+                              "multi_match": {
+                                  "query": "{{query}}",
+                                  "type": "cross_fields",
+                                  "fields": [
+                                      "brand",
+                                      "item.*",
+                                  ]
+                              }
+                          }
+                      ],
+                      "filter": [{
+                          "term": {
+                              "state1": true
+                          }
+                      },{
+                          "term": {
+                              "state2": false
+                          }
+                      }]
+                  }
+              }
+          }
+      }
+  }
