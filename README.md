@@ -5,12 +5,25 @@ elasticsearch를 사용하면서 주로 사용하게 되는 명령어들을 정�
 참고하시면 좋을 것 같네요 ㅎㅎ
 
 
-kibana console에서 index 내에 모든 데이터를 조회하는 쿼리문입니다
+kibana console에서 my_index 내에 모든 데이터를 조회하는 쿼리문입니다
 
     GET [my_index]/_search
     {
       "query": {
         "match_all": {}
+      }
+    }
+
+
+kibana console에서 my_index 내에 조건에 맞는 데이터를 조회하는 쿼리문입니다  
+regexp match 등 여러 조건의 쿼리문이 있습니
+
+    GET [my_index]/_search
+    {
+      "query":{
+        "match": {
+          "FIELD": "TEXT"
+        }
       }
     }
 
