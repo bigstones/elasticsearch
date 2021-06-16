@@ -4,6 +4,16 @@ elasticsearch를 사용하면서 주로 사용하게 되는 명령어들을 정�
 
 참고하시면 좋을 것 같네요 ㅎㅎ
 
+
+kibana console에서 index 내에 모든 데이터를 조회하는 쿼리문입니다
+
+    GET [my_index]/_search
+    {
+      "query": {
+        "match_all": {}
+      }
+    }
+
 elasticsearch는 kibana외에 Linux curl 을 이용하여 조회할 수도 있습니다
 
     curl -XGET http://[호스트]/[directory]/_search -H 'Content-Type: application/json' -d'
