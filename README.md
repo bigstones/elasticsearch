@@ -39,6 +39,40 @@ elasticsearch는 kibana외에 Linux curl 을 이용하여 조회할 수도 있�
     }'
 
 
+일정 조건을 만들어 해당 조건을 반복검색하게 할 수 있습니다
+
+    POST _scripts/[template_id]
+    {
+      "script": {
+        "lang": "mustache",
+        "source": {
+          "from": "{{from}}{{^from}}0{{/from}}",
+          "size": "{{size}}{{^size}}10{{/size}}",
+          "query": {
+            "match": {
+              "FIELD": "{{qeury}}"
+            }
+          }
+        }
+      }
+    }
+    
+추가된 스크립트는 다음과 같이 조회할 수 있습니다
+
+    GET _scripts/[template_id]
+    
+사용법은 다음과 같습니다
+    
+    GET _search/template
+    {
+      "id": "[template_id]",
+      "params": {
+        "from": 0,
+        "size": 1,
+        "query" : "검색어"
+      }
+    }
+
 [아래는 query.json 스크립트 예시입니다](https://github.com/bigstones/elasticsearch/tree/main/code)
 
     {
