@@ -112,3 +112,23 @@ elasticsearch는 kibana외에 Linux curl 을 이용하여 조회할 수도 있�
             }
         }
     }
+
+
+## 수정
+
+일괄 데이터 수정 시 다음과 같은 쿼리문을 사용하면 됩니다
+
+    POST images/_update_by_query
+    {
+      "script":{
+        "source":"ctx._source.imgPosition = params.location",
+        "params":{
+          "location" : "_"
+        }
+      },
+      "query":{
+        "term":{
+          "imgPosition" : "촬영부위"
+        }
+      }
+    }
