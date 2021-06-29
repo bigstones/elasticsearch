@@ -121,14 +121,14 @@ elasticsearch는 kibana외에 Linux curl 을 이용하여 조회할 수도 있�
     POST images/_update_by_query
     {
       "script":{
-        "source":"ctx._source.imgPosition = params.location",
+        "source":"ctx._source.Position = params.location",
         "params":{
-          "location" : "_"
+          "location" : "지역"
         }
       },
       "query":{
         "term":{
-          "imgPosition" : "촬영부위"
+          "Position" : ""
         }
       }
     }
